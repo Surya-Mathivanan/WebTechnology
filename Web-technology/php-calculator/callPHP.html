@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple PHP Calculator</h1>
+    
+    <!-- The form for input -->
+    <form method="post" action="">
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" name="num2" placeholder="Enter second number" required>
+        <br><br>
+        <button type="submit" name="operation" value="add">Add</button>
+        <button type="submit" name="operation" value="subtract">Subtract</button>
+        <button type="submit" name="operation" value="multiply">Multiply</button>
+        <button type="submit" name="operation" value="divide">Divide</button>
+    </form>
+
+    <?php
+    // PHP code to handle calculation
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num1 = $_POST['num1'];
+        $num2 = $_POST['num2'];
+        $operation = $_POST['operation'];
+        $result = '';
+
+        if (!empty($num1) && !empty($num2)) {
+            switch ($operation) {
+                case 'add':
+                    $result = $num1 + $num2;
+                    break;
+                case 'subtract':
+                    $result = $num1 - $num2;
+                    break;
+                case 'multiply':
+                    $result = $num1 * $num2;
+                    break;
+                case 'divide':
+                    if ($num2 != 0) {
+                        $result = $num1 / $num2;
+                    } else {
+                        $result = "Cannot divide by zero.";
+                    }
+                    break;
+                default:
+                    $result = "Invalid operation.";
+            }
+        } else {
+            $result = "Please enter valid numbers.";
+        }
+
+        echo "<div id='result'>Result: $result</div>";
+    }
+    ?>
+
+</body>
+</html>

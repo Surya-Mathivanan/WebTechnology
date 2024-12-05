@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Student Performance</h1>
+<table id="studentTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Mark</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows will be added dynamically here -->
+    </tbody>
+</table>
+
+<script>
+    // Load and parse the XML file
+    async function loadXML() {
+        try {
+            const response = await fetch('students.xml'); // Path to your XML file
+            const xmlText = await response.text();
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+
+            const students = xmlDoc.getElementsByTagName('Student');
+            const tableBody = document.getElementById('studentTable').querySelector('tbody');
+
+            for (let student of students) {
+                const name = student.getElementsByTagName('Name')[0].textContent;
+                const rollNo = student.getElementsByTagName('RollNo')[0].textContent;
+                const mark = student.getElementsByTagName('Mark')[0].textContent;
+                const result = student.getElementsByTagName('Result')[0].textContent;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>${rollNo}</td>
+                    <td>${mark}</td>
+                    <td>${result}</td>
+                `;
+                tableBody.appendChild(row);
+            }
+        } catch (error) {
+            console.error('Error loading XML:', error);
+        }
+    }
+
+    // Call the function to load the XML
+    loadXML();
+</script>
+
+</body>
+</html>

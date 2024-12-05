@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        .media-section {
+            margin: 20px 0;
+        }
+
+        audio, video {
+            margin-top: 10px;
+            display: block;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Music Club</h1>
+        <p>Experience the best tunes and beats!</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Audio Section -->
+        <div class="media-section">
+            <h2>Listen to Our Tracks</h2>
+            <audio controls>
+                <source src="Hey-Minnale-MassTamilan.dev.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p><em>Now playing: Sample Audio Track</em></p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="media-section">
+            <h2>Watch Our Latest Performance</h2>
+            <video controls>
+                <source src="videoplayback.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <p><em>Featured Video: Music Club Live Concert</em></p>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+</body>
+</html>

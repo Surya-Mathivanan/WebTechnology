@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Students>
+    <Student>
+        <Name>John Doe</Name>
+        <RollNo>101</RollNo>
+        <Mark>85</Mark>
+        <Result>Pass</Result>
+    </Student>
+    <Student>
+        <Name>Jane Smith</Name>
+        <RollNo>102</RollNo>
+        <Mark>45</Mark>
+        <Result>Fail</Result>
+    </Student>
+    <Student>
+        <Name>Michael Brown</Name>
+        <RollNo>103</RollNo>
+        <Mark>78</Mark>
+        <Result>Pass</Result>
+    </Student>
+    <Student>
+        <Name>Emily Davis</Name>
+        <RollNo>104</RollNo>
+        <Mark>92</Mark>
+        <Result>Pass</Result>
+    </Student>
+</Students>

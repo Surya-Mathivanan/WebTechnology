@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DHTML Example</h1>
+
+<div class="container">
+    <form onsubmit="handleSubmit(event)">
+        <label for="textInput">Type something: </label>
+        <input type="text" id="textInput" onkeypress="onKeyPressEvent()" required>
+        <br><br>
+
+        <label for="checkbox">Check me: </label>
+        <input type="checkbox" id="checkbox" onclick="onCheckEvent()">
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+<h1>Change Background Color</h1>
+
+<div class="container">
+    <button onclick="changeBackgroundColor()">Click Me</button>
+</div>
+
+<script>
+    // Function to handle key press
+    function onKeyPressEvent() {
+        console.log("Key pressed in the input field!");
+    }
+
+    // Function to handle checkbox check
+    function onCheckEvent() {
+        const checkbox = document.getElementById("checkbox");
+        if (checkbox.checked) {
+            alert("Checkbox is checked!");
+        } else {
+            alert("Checkbox is unchecked!");
+        }
+    }
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert("Form submitted successfully!");
+    }
+        // Function to generate a random color
+        function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Function to change the background color
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = getRandomColor();
+    }
+
+</script>
+
+</body>
+</html>

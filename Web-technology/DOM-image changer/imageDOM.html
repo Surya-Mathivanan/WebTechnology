@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image Source</title>
+</head>
+<body>
+    <h2>Image Source Changer</h2>
+
+    <img id="image" src="image1.jpg" alt="Image" width="300">
+
+    <script>
+        // Array of image sources to cycle through
+        const images = [
+            "image1.jpg",  // Replace with your image paths
+            "image2.jpg",
+            "image3.jpg"
+        ];
+        let currentIndex = 0;  // To track the current image
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;  // Move to the next image
+            document.getElementById('image').src = images[currentIndex];
+        }
+
+        // Change image every 1000 milliseconds (1 second)
+        setInterval(changeImage, 1000);
+    </script>
+
+</body>
+</html>
