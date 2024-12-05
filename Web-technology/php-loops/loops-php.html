@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        pre {
+            background-color: #f4f4f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP Loops Demonstration</h1>
+
+    <?php
+    // 1. For Loop
+    echo "<h2>1. For Loop</h2>";
+    echo "<ul>";
+    for ($i = 1; $i <= 5; $i++) {
+        echo "<li>Number $i</li>";
+    }
+    echo "</ul>";
+
+    // 2. While Loop
+    echo "<h2>2. While Loop</h2>";
+    echo "<ul>";
+    $count = 1;
+    while ($count <= 5) {
+        echo "<li>Number $count</li>";
+        $count++;
+    }
+    echo "</ul>";
+
+    // 3. Do-While Loop
+    echo "<h2>3. Do-While Loop</h2>";
+    echo "<ul>";
+    $num = 1;
+    do {
+        echo "<li>Number $num</li>";
+        $num++;
+    } while ($num <= 5);
+    echo "</ul>";
+
+    // 4. Foreach Loop
+    echo "<h2>4. Foreach Loop</h2>";
+    $fruits = array("Apple", "Banana", "Cherry", "Mango");
+    echo "<ul>";
+    foreach ($fruits as $fruit) {
+        echo "<li>$fruit</li>";
+    }
+    echo "</ul>";
+
+    // 5. Alternative Syntax for Loops
+    echo "<h2>5. Alternative Syntax for Loops</h2>";
+    echo "<pre>";
+    echo "This syntax is often used in PHP templates when mixing HTML and PHP.";
+    echo "</pre>";
+
+    echo "<ul>";
+    for ($i = 1; $i <= 3; $i++):
+        echo "<li>Alternative Syntax Item $i</li>";
+    endfor;
+    echo "</ul>";
+    ?>
+</body>
+</html>

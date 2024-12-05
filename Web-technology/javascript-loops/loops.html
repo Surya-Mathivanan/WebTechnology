@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in HTML using JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        pre {
+            background: #f4f4f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Demonstrating Loops in HTML using JavaScript</h1>
+
+    <div class="container">
+        <h2>1. For Loop</h2>
+        <ul id="forLoop"></ul>
+    </div>
+
+    <div class="container">
+        <h2>2. While Loop</h2>
+        <ul id="whileLoop"></ul>
+    </div>
+
+    <div class="container">
+        <h2>3. Do-While Loop</h2>
+        <ul id="doWhileLoop"></ul>
+    </div>
+
+    <div class="container">
+        <h2>4. For...In Loop</h2>
+        <pre id="forInLoop"></pre>
+    </div>
+
+    <div class="container">
+        <h2>5. For...Of Loop</h2>
+        <ul id="forOfLoop"></ul>
+    </div>
+
+    <script>
+        // 1. For Loop
+        const forLoopList = document.getElementById('forLoop');
+        for (let i = 1; i <= 5; i++) {
+            const li = document.createElement('li');
+            li.textContent = `Number ${i}`;
+            forLoopList.appendChild(li);
+        }
+
+        // 2. While Loop
+        const whileLoopList = document.getElementById('whileLoop');
+        let count = 1;
+        while (count <= 5) {
+            const li = document.createElement('li');
+            li.textContent = `Number ${count}`;
+            whileLoopList.appendChild(li);
+            count++;
+        }
+
+        // 3. Do-While Loop
+        const doWhileLoopList = document.getElementById('doWhileLoop');
+        let num = 1;
+        do {
+            const li = document.createElement('li');
+            li.textContent = `Number ${num}`;
+            doWhileLoopList.appendChild(li);
+            num++;
+        } while (num <= 5);
+
+        // 4. For...In Loop
+        const forInObject = {a: "Apple", b: "Banana", c: "Cherry"};
+        const forInLoop = document.getElementById('forInLoop');
+        for (let key in forInObject) {
+            forInLoop.textContent += `${key}: ${forInObject[key]}\n`;
+        }
+
+        // 5. For...Of Loop
+        const fruits = ["Mango", "Grapes", "Orange", "Pineapple"];
+        const forOfLoopList = document.getElementById('forOfLoop');
+        for (let fruit of fruits) {
+            const li = document.createElement('li');
+            li.textContent = fruit;
+            forOfLoopList.appendChild(li);
+        }
+    </script>
+
+</body>
+</html>
